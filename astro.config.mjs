@@ -6,6 +6,7 @@ import tailwindcss from '@tailwindcss/vite';
 export default defineConfig({
   site: 'https://jraftcreative.github.io',
   base: '/kairos-website',
+  trailingSlash: 'always',
   vite: {
     plugins: [tailwindcss()]
   }
