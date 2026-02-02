@@ -1,0 +1,45 @@
+---
+const approaches = [
+  {
+    title: 'Professional Integrity',
+    description: 'We are committed to placing our clients\' interests before self. We believe in building long-term relationships based on trust and transparency.'
+  },
+  {
+    title: 'Systematic Processes',
+    description: 'We follow proven systematic processes to ensure that we deliver quality advice, including our six-step Financial Planning Process.'
+  },
+  {
+    title: 'Tailored Solutions',
+    description: 'Our consultants design solutions specifically for the needs of your business or family to ensure you achieve success with minimal risks.'
+  },
+  {
+    title: 'Investment Methodologies',
+    description: 'We select only the best-in-class insurance and investment products to suit your unique financial goals and risk tolerance.'
+  }
+]
+---
+
+<section class="bg-white">
+  <div class="mx-auto max-w-7xl px-6 md:px-12 pt-8">
+    <div class="grid lg:grid-cols-3 pt-8 border-t border-base-200">
+      <!-- Section Title -->
+      <h2 class="text-xl md:text-2xl font-medium text-base-900 mb-8 lg:mb-0">
+        Our Approach
+      </h2>
+      
+      <!-- Approach Grid -->
+      <div class="lg:col-span-2 grid md:grid-cols-2 gap-8 lg:gap-12">
+        {approaches.map((item) => (
+          <div class="flex flex-col">
+            <h3 class="text-xl md:text-2xl font-medium text-base-900">
+              {item.title}
+            </h3>
+            <p class="text-base text-base-500 mt-4 text-pretty">
+              {item.description}
+            </p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

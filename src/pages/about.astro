@@ -1,0 +1,125 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+
+const values = [
+  {
+    title: 'Client-First Philosophy',
+    description: 'Every recommendation we make is guided by what\'s best for you. We\'re committed to building lasting relationships based on trust, not transactions.'
+  },
+  {
+    title: 'Comprehensive Expertise',
+    description: 'Our team brings together specialists across financial planning, insurance, investments, and business solutions to provide holistic advice.'
+  },
+  {
+    title: 'Proven Methodology',
+    description: 'We follow structured, time-tested processes that have helped countless clients achieve their financial goals over the years.'
+  },
+  {
+    title: 'Continuous Support',
+    description: 'Your financial journey doesn\'t end with a plan. We provide ongoing guidance and regular reviews to adapt to your evolving needs.'
+  }
+]
+---
+
+<BaseLayout 
+  title="About Us | Kairos Advisory Group"
+  description="Learn about Kairos Advisory Group - a trusted financial advisory firm in Singapore dedicated to helping individuals and businesses achieve financial success."
+>
+  <!-- Hero -->
+  <section class="bg-white">
+    <div class="mx-auto max-w-7xl px-6 md:px-12 py-16 lg:py-24">
+      <div class="max-w-3xl">
+        <p class="text-sm font-medium text-base-500 uppercase tracking-wider mb-4">About Us</p>
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-medium tracking-tight text-base-900">
+          Your Trusted Financial Partner
+        </h1>
+        <p class="text-xl text-base-500 mt-8 text-pretty">
+          Kairos Advisory Group is an exclusive association of distinguished financial advisers. 
+          We are committed to helping our clients navigate the complexities of financial planning 
+          with integrity, expertise, and personalized service.
+        </p>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Image Section -->
+  <section class="bg-white">
+    <div class="mx-auto max-w-7xl px-6 md:px-12">
+      <img 
+        src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=2070&auto=format&fit=crop"
+        alt="Professional team meeting"
+        loading="lazy"
+        decoding="async"
+        class="w-full h-[40vh] lg:h-[50vh] object-cover"
+      />
+    </div>
+  </section>
+  
+  <!-- Our Story -->
+  <section class="bg-white">
+    <div class="mx-auto max-w-7xl px-6 md:px-12 py-16 lg:py-24">
+      <div class="grid lg:grid-cols-2 gap-12 lg:gap-24">
+        <div>
+          <h2 class="text-2xl md:text-3xl font-medium text-base-900">Our Story</h2>
+        </div>
+        <div class="space-y-6 text-base text-base-500">
+          <p>
+            Founded with a mission to make quality financial advice accessible to everyone, 
+            Kairos Advisory Group has grown into one of Singapore's most trusted advisory firms.
+          </p>
+          <p>
+            The name "Kairos" comes from the ancient Greek word meaning "the opportune moment." 
+            We believe that with the right guidance at the right time, everyone can achieve 
+            their financial aspirations.
+          </p>
+          <p>
+            As part of IPP Financial Advisers Pte Ltd, we combine the personal touch of a 
+            boutique advisory with the resources and expertise of a leading financial advisory 
+            firm in Singapore.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Values -->
+  <section class="bg-base-50">
+    <div class="mx-auto max-w-7xl px-6 md:px-12 py-16 lg:py-24">
+      <div class="max-w-2xl mb-12">
+        <h2 class="text-2xl md:text-3xl font-medium text-base-900">What Sets Us Apart</h2>
+        <p class="text-base text-base-500 mt-4">
+          Our commitment to excellence and client satisfaction defines everything we do.
+        </p>
+      </div>
+      
+      <div class="grid md:grid-cols-2 gap-8 lg:gap-12">
+        {values.map((value) => (
+          <div class="bg-white p-8 border border-base-200">
+            <h3 class="text-xl font-medium text-base-900">{value.title}</h3>
+            <p class="text-base text-base-500 mt-4">{value.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+  
+  <!-- CTA -->
+  <section class="bg-base-900">
+    <div class="mx-auto max-w-7xl px-6 md:px-12 py-16 lg:py-24">
+      <div class="max-w-2xl">
+        <h2 class="text-2xl md:text-3xl font-medium text-white">
+          Ready to start your financial journey?
+        </h2>
+        <p class="text-base text-base-300 mt-4">
+          Schedule a consultation with one of our expert advisers today.
+        </p>
+        <a 
+          href="/contact" 
+          class="inline-flex items-center justify-center px-8 py-4 bg-white text-base-900 font-medium hover:bg-base-100 transition-colors duration-200 mt-8"
+        >
+          Contact Us
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
