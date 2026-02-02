@@ -1,22 +1,24 @@
 ---
+const base = import.meta.env.BASE_URL
+
 const services = [
   {
     title: 'Business Solutions',
     description: 'Comprehensive Protection for Your Enterprise',
     image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop',
-    href: '/services/business-solutions'
+    href: `${base}services/`
   },
   {
     title: 'Financial Planning',
     description: 'Six-Step Process for Financial Security',
     image: 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?q=80&w=2070&auto=format&fit=crop',
-    href: '/services/financial-planning'
+    href: `${base}services/`
   },
   {
     title: 'Investment Methodologies',
     description: 'V.E.S.T Analysis for Strategic Investing',
     image: 'https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?q=80&w=2070&auto=format&fit=crop',
-    href: '/services/investment-methodologies'
+    href: `${base}services/`
   }
 ]
 ---
@@ -35,7 +37,7 @@ const services = [
       </div>
       <div class="flex flex-col lg:col-start-3">
         <a 
-          href="/services" 
+          href={`${base}services/`}
           class="text-base-900 hover:text-base-500 mt-auto flex gap-3 items-center justify-between group transition-colors duration-200"
         >
           <span>View all services</span>
