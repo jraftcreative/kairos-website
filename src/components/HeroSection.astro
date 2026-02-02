@@ -11,13 +11,29 @@ const base = import.meta.env.BASE_URL
         alt="Kairos Advisory Group"
         loading="eager"
         decoding="async"
-        class="w-full h-[50vh] lg:h-[60vh] 2xl:h-[70vh] object-contain"
+        class="w-full h-[40vh] md:h-[50vh] lg:h-[60vh] 2xl:h-[70vh] object-contain"
       />
     </div>
     
     <!-- Headline -->
-    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-medium tracking-tight text-base-900 mt-12 text-balance max-w-4xl">
+    <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium tracking-tight text-base-900 mt-8 md:mt-12 text-balance max-w-4xl">
       Financial Planning Made Simple.
     </h1>
+    
+    <!-- Mobile: Quick stats/trust indicators -->
+    <div class="lg:hidden grid grid-cols-3 gap-4 mt-8 pt-8 border-t border-base-200">
+      <div class="text-center">
+        <div class="text-2xl font-semibold text-base-900">15+</div>
+        <div class="text-xs text-base-500 mt-1">Years Experience</div>
+      </div>
+      <div class="text-center">
+        <div class="text-2xl font-semibold text-base-900">500+</div>
+        <div class="text-xs text-base-500 mt-1">Clients Served</div>
+      </div>
+      <div class="text-center">
+        <div class="text-2xl font-semibold text-base-900">$50M+</div>
+        <div class="text-xs text-base-500 mt-1">Assets Managed</div>
+      </div>
+    </div>
   </div>
 </section>

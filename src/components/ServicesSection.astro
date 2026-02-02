@@ -24,7 +24,7 @@ const services = [
 ---
 
 <section class="bg-white">
-  <div class="mx-auto max-w-7xl px-6 md:px-12 py-24">
+  <div class="mx-auto max-w-7xl px-6 md:px-12 py-16 lg:py-24">
     <!-- Header -->
     <div class="grid lg:grid-cols-3 gap-8">
       <div>
@@ -35,7 +35,7 @@ const services = [
           We adhere to a strict code of professional conduct and offer comprehensive financial planning and advisory services.
         </p>
       </div>
-      <div class="flex flex-col lg:col-start-3">
+      <div class="hidden lg:flex flex-col lg:col-start-3">
         <a 
           href={`${base}services/`}
           class="text-base-900 hover:text-base-500 mt-auto flex gap-3 items-center justify-between group transition-colors duration-200"
@@ -48,8 +48,57 @@ const services = [
       </div>
     </div>
     
-    <!-- Services Grid -->
-    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8 pt-8 border-t border-base-200">
+    <!-- Mobile: Horizontal Scroll Cards -->
+    <div class="lg:hidden mt-8 pt-8 border-t border-base-200 -mx-6 px-6">
+      <div class="flex gap-4 overflow-x-auto snap-x snap-mandatory scrollbar-hide pb-4">
+        {services.map((service, index) => (
+          <a 
+            href={service.href} 
+            class="flex-shrink-0 w-[280px] snap-start group"
+          >
+            <div class="relative overflow-hidden rounded-xl">
+              <img 
+                src={service.image} 
+                alt={service.title}
+                loading="lazy"
+                decoding="async"
+                class="aspect-[4/3] w-full object-cover group-active:scale-95 transition-transform duration-200"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+              <div class="absolute bottom-0 left-0 right-0 p-4 text-white">
+                <h3 class="text-lg font-medium">{service.title}</h3>
+                <p class="text-sm text-white/80 mt-1">{service.description}</p>
+              </div>
+            </div>
+          </a>
+        ))}
+        
+        <!-- View All Card -->
+        <a 
+          href={`${base}services/`} 
+          class="flex-shrink-0 w-[140px] snap-start flex items-center justify-center"
+        >
+          <div class="text-center">
+            <div class="w-14 h-14 mx-auto rounded-full bg-base-100 flex items-center justify-center mb-3">
+              <svg class="w-6 h-6 text-base-600" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+              </svg>
+            </div>
+            <span class="text-sm font-medium text-base-600">View All</span>
+          </div>
+        </a>
+      </div>
+      
+      <!-- Scroll indicator dots -->
+      <div class="flex justify-center gap-2 mt-4">
+        {services.map((_, index) => (
+          <div class="w-2 h-2 rounded-full bg-base-300" />
+        ))}
+      </div>
+    </div>
+    
+    <!-- Desktop: Grid Layout -->
+    <div class="hidden lg:grid lg:grid-cols-3 gap-8 mt-8 pt-8 border-t border-base-200">
       {services.map((service) => (
         <a 
           href={service.href} 
@@ -83,3 +132,13 @@ const services = [
     </div>
   </div>
 </section>
+
+<style>
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+</style>
